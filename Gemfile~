@@ -16,6 +16,9 @@ group :test do
   gem 'webrat', '0.7.1'
 end
 
+group :development, :test do
+  gem 'web-app-theme', '>=0.6.2'
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 
