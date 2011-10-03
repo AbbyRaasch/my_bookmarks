@@ -19,10 +19,26 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe BookmarksController do
+  render_views
+  # This should return the minimal set of attributes required to create a valid
+  # Bookmark. As you add validations to Bookmark, be sure to
+  # update the return value of this method accordingly.
+  
   describe "GET 'index'" do
+    @bookmarks = Bookmark.all
     it "should be successful" do
       get 'index'
       response.should be_success
+      if @bookmarks.nil? == true
+	puts "No bookmarks present"
+      end
+    end
+    
+    it "should have the right title" do
+      get 'index'
+      response.should have_selector("title",
+                                    :content =>
+				      "Web App")
     end
   end
 
@@ -31,5 +47,11 @@ describe BookmarksController do
       get 'new'
       response.should be_success
     end
+    
+    it "renders a submit button" do
+      get 'new'
+      response.should have_selector("input", :type => "submit")
+    end
   end
 end
+
