@@ -1,0 +1,11 @@
+<h1>
+  <%= @user.name %>, <%= @user.real_name %>, <%= @user.email %>
+  <%= render @bookmarks %>
+</h1>
+	<table>
+		<tr>
+    		<td><%= link_to 'Edit', edit_user_path(@user) %></td>
+  		</tr>
+	</table>
+
+  

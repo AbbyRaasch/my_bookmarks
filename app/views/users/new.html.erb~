@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
+  </head>
+  <body>
+	  <h1>Sign up</h1>
+
+      <%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages' %>
+	<div class="field">
+	  <%= f.label :name %><br />
+	  <%= f.text_field :name %>
+	</div>
+	<div class="field">
+	  <%= f.label :real_name %><br />
+	  <%= f.text_field :real_name %>
+	</div>
+	<div class="field">
+	  <%= f.label :email %><br />
+	  <%= f.text_field :email %>
+	</div>
+	<div class="field">
+	  <%= f.label :password %><br />
+	  <%= f.password_field :password %>
+	</div>
+	<div class="field">
+	  <%= f.label :password_confirmation, "Confirmation" %><br />
+	  <%= f.password_field :password_confirmation %>
+	</div>
+	<div class="actions">
+	  <%= f.submit "Register" %>
+	</div>
+      <% end %>
+  </body>
+</html>

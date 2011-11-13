@@ -1,0 +1,27 @@
+# Logfile created on 2011-10-22 14:11:48 -0500 by logger.rb/25413
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"\xE2\x9C\x93", "user"=>{"name"=>"", "real_name"=>"", "email"=>"mhartl@example.com", "password"=>"foobarfoo", "password_confirmation"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"\xE2\x9C\x93", "user"=>{"name"=>"", "real_name"=>"", "email"=>"mhartl@example.com", "password"=>"foobarfoo", "password_confirmation"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+REQUESTING PAGE: POST /users with {"utf8"=>"\xE2\x9C\x93", "user"=>{"name"=>"", "real_name"=>"", "email"=>"mhartl@example.com", "password"=>"foobarfoo", "password_confirmation"=>""}, "commit"=>"Register"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}

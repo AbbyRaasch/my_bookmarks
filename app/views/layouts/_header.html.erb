@@ -1,0 +1,21 @@
+<div id="header">
+
+	<h1><a href="/">Web App</a></h1>
+      
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+      <br /><br />
+    <ul>
+      <li><%= link_to "Help", '#' %></li>
+      <li><%= link_to "Search Box", '#' %></li>
+      <% if signed_in? %>
+      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign up", signup_path %></li>
+      <% end %>
+    </ul>
+    
+</div> 
+<br /><br />
+<br /><br />

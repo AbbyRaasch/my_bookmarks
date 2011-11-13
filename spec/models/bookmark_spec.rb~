@@ -7,6 +7,6 @@ describe Bookmark do
   end
   
   it "should create a new instance given valid attributes" do
-    Bookmark.create!(@attr)
+    User.create!(@attr)
   end
 end

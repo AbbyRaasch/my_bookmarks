@@ -24,23 +24,7 @@ describe BookmarksController do
   # Bookmark. As you add validations to Bookmark, be sure to
   # update the return value of this method accordingly.
   
-  describe "GET 'index'" do
-    @bookmarks = Bookmark.all
-    it "should be successful" do
-      get 'index'
-      response.should be_success
-      if @bookmarks.nil? == true
-	puts "No bookmarks present"
-      end
-    end
-    
-    it "should have the right title" do
-      get 'index'
-      response.should have_selector("title",
-                                    :content =>
-				      "Web App")
-    end
-  end
+  
 
   describe "GET 'new'" do
     it "should be successful" do

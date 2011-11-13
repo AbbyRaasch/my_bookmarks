@@ -8,19 +8,9 @@
 </head>
 <body>
   <div id="container">
-    <div id="header">
-      <h1><a href="/">Web App</a></h1>
-      <div id="user-navigation">
-        <ul class="wat-cf">
-          <li><a href="http://localhost:3000/bookmarks"><%= t("web-app-theme.profile", :default => "Show Bookmarks") %></a></li>
-          <li><a href="http://localhost:3000/bookmarks/new"><%= t("web-app-theme.settings", :default => "Create Bookmarks") %></a></li>
-          <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
-        </ul>
-      </div>
-      <div id="main-navigation">
-        <ul class="wat-cf"></ul>
-      </div>
-    </div>    
+    
+      <%= render 'layouts/header' %>
+        
     <div id="wrapper" class="wat-cf">
       <div class="flash">
         <% flash.each do |type, message| -%>
@@ -30,13 +20,9 @@
         <% end -%>
       </div>
       <div id="main">
-        <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Web App.</p>
-          </div>      
-        </div>
+        <%= render 'bookmarks/show' %>
       </div>
+      <%= render 'layouts/footer' %>
       <div id="sidebar">
         <%= yield :sidebar %>
       </div>

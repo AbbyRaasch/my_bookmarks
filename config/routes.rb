@@ -1,5 +1,19 @@
 Palatable::Application.routes.draw do
+
+  # root :to => 'users#home'
+  root :to => 'sessions#new'
+  
+  match '/', :to => 'users#show'
+  
   resources :bookmarks
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+ 
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
