@@ -8,9 +8,10 @@
       <br /><br />
     <ul>
       <li><%= link_to "Help", '#' %></li>
-      <li><%= link_to "Search Box", '#' %></li>
+      <li><%= link_to "search...", '#' %></li>
       <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <li><%= link_to "Logout", signout_path, :method => :delete %></li>
+      <li><%= link_to "Profile", user_path(current_user) %></li>
       <% else %>
       <li><%= link_to "Sign up", signup_path %></li>
       <% end %>

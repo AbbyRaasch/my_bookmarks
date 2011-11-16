@@ -1,10 +1,21 @@
 <h1>
-  <%= @user.name %>, <%= @user.real_name %>, <%= @user.email %>
+  
+  
+  <%= @user.name %>, <%= @user.real_name %>, <%= @user.email %>, Bookmarks <%= @user.bookmarks.count %>
+  <% unless @user.bookmarks.empty? %>
+        <table class="bookmarks" summary="User bookmarks">
+          <%= render @bookmarks %>
+        </table>
+        <%= will_paginate @bookmarks %>
+  <% end %>
+
+
 </h1>
 	<table>
 		<tr>
     		<td><%= link_to 'Edit', edit_user_path(@user) %></td>
   		</tr>
 	</table>
+
 
   

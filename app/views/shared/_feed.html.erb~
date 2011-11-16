@@ -1,0 +1,6 @@
+<% unless @feed_items.empty? %>
+  <table class="bookmarks" summary="User bookmarks">
+   
+  </table>
+  <%= will_paginate @feed_items %>
+<% end %>

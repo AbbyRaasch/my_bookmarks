@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
 	protect_from_forgery
   include SessionsHelper
   def new
+ 	 @bookmark = Bookmark.new if signed_in?
+ 	  @feed_items = current_user.feed.paginate(:page => params[:page])
+ 	 #@feed_items = current_user.feed.paginate(:page =>[:page])
   end
   
   def create
@@ -14,7 +17,8 @@ class SessionsController < ApplicationController
     else
       # Sign the user in and redirect to the user's show page.
       sign_in user
-      redirect_to user
+      #redirect_to user
+      redirect_to root_path
     end
   end
   

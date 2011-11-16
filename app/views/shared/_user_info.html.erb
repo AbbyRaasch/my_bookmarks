@@ -1,0 +1,14 @@
+<div class="user_info">
+<br />
+<br />
+<br />
+  
+  <a href="<%= user_path(current_user) %>">
+    <span class="user_name">
+      <%= current_user.name %>
+    </span>
+    <span class="bookmarks">
+      <%= pluralize(current_user.bookmarks.count, "bookmarks") %>
+    </span>
+  </a>
+</div>

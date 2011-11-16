@@ -1,8 +1,10 @@
 require 'digest'
 class User < ActiveRecord::Base
-	has_many :bookmarks
+	
   attr_accessor :password
   attr_accessible :name, :real_name, :email, :password, :password_confirmation
+  
+  has_many :bookmarks, :dependent => :destroy
   
   # Automatically create the virtual attribute 'password_confirmation'.
   validates :password, :presence     => true,
@@ -41,6 +43,11 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def feed
+  	# This is preliminary.  See Chapter 12 for the full implementation.
+  	Bookmark.where("user_id = ?", id)
   end
   private
 

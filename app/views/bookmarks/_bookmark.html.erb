@@ -1,0 +1,15 @@
+<tr>
+  <td class="bookmark">
+    <span class="content"><%= bookmark.URL %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(bookmark.created_at) %> ago.
+    </span>
+  </td>
+  <% if current_user?(bookmark.user) %>
+  <td>
+    <%= link_to "delete", bookmark, :method => :delete,
+                                     :confirm => "You sure?",
+                                     :title => bookmark.URL %>
+  </td>
+  <% end %>
+</tr>

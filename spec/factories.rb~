@@ -6,3 +6,11 @@ Factory.define :user do |user|
   user.password              "foobarfoo"
   user.password_confirmation "foobarfoo"
 end
+Factory.sequence :email do |n|
+  "person-#{n}@example.com"
+end
+
+Factory.define :bookmark do |bookmark|
+  bookmark.URL "www.example.com"
+  bookmark.association :user
+end
