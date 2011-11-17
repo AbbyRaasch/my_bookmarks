@@ -6,7 +6,7 @@ Palatable::Application.routes.draw do
   #match '/', :to => 'users#show'
   #root :to => 'users#home'
   resources :users
-  resources :bookmarks, :only => [:new, :create, :destroy]
+  resources :bookmarks
   resources :sessions, :only => [:new, :create, :destroy]
   
  

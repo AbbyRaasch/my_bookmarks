@@ -9,7 +9,7 @@
   <td>
     <%= link_to "delete", bookmark, :method => :delete,
                                      :confirm => "You sure?",
-                                     :title => bookmark.content %>
+                                     :title => bookmark.URL %>
   </td>
   <% end %>
 </tr>

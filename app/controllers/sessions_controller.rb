@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 	protect_from_forgery
   include SessionsHelper
   def new
- 	 @bookmark = Bookmark.new if signed_in?
+ 	 #@bookmark = Bookmark.new if signed_in?
  	 #@feed_items = current_user.feed.paginate(:page =>[:page])
   end
   

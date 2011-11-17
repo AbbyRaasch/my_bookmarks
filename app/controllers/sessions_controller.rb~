@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   include SessionsHelper
   def new
  	 @bookmark = Bookmark.new if signed_in?
- 	  @feed_items = current_user.feed.paginate(:page => params[:page])
  	 #@feed_items = current_user.feed.paginate(:page =>[:page])
   end
   
