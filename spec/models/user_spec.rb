@@ -188,7 +188,7 @@ describe User do
       end
 
       it "should not include a different user's bookmarks" do
-        bm3 = Factory(:micropost,
+        bm3 = Factory(:bookmark,
                       :user => Factory(:user, :email => Factory.next(:email)))
         @user.feed.include?(bm3).should be_false
       end

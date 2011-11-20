@@ -14,15 +14,11 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Profile updated."
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
   
@@ -41,4 +37,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  private
+  
+  	def authenticate
+  		deny_access unless signed_in?
+	end
 end
