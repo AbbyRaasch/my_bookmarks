@@ -1,6 +1,9 @@
-<% unless @user.bookmarks.empty? %>
+ <% unless @user.bookmarks.empty? %>
         <table class="bookmarks" summary="User bookmarks">
           <%= render @bookmarks %>
         </table>
         <%= will_paginate @bookmarks %>
-  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>

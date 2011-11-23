@@ -1,15 +1,11 @@
 Palatable::Application.routes.draw do
-
-  
   root :to => 'sessions#new'
   
-  #match '/', :to => 'users#show'
-  #root :to => 'users#home'
+
   resources :users
   resources :bookmarks
-  resources :sessions, :only => [:new, :create, :destroy]
-  
- 
+  resources :sessions, :only => [:create, :destroy]
+
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'

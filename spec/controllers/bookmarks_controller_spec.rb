@@ -24,23 +24,18 @@ describe BookmarksController do
   # Bookmark. As you add validations to Bookmark, be sure to
   # update the return value of this method accordingly.
   
-  describe "GET 'index'" do
-    @bookmarks = Bookmark.all
-    it "should be successful" do
-      get 'index'
-      response.should be_success
-      if @bookmarks.nil? == true
-	puts "No bookmarks present"
-      end
-    end
-    
-    it "should have the right title" do
-      get 'index'
-      response.should have_selector("title",
-                                    :content =>
-				      "Web App")
-    end
-  end
+ # describe "GET 'index'" do
+#    @bookmarks = Bookmark.all
+#    it "should be successful" do
+#      get 'index'
+#      response.should be_success
+#      
+#      if @bookmarks.nil? == true
+#			puts "No bookmarks present"
+#      end
+#    end
+#
+#  end
 
   describe "GET 'new'" do
     it "should be successful" do
@@ -56,15 +51,15 @@ describe BookmarksController do
   
   describe "access control" do
 
-    #it "should deny access to 'create'" do
-#      post :create
-#      response.should redirect_to(signin_path)
-#    end
-#
-#    it "should deny access to 'destroy'" do
-#      delete :destroy, :id => 1
-#      response.should redirect_to(signin_path)
-#    end
+    it "should deny access to 'create'" do
+      post :create
+      response.should redirect_to(signin_path)
+    end
+
+   it "should deny access to 'destroy'" do
+     delete :destroy, :id => 1
+      response.should redirect_to(signin_path)
+    end
   end
   
   describe "POST 'create'" do
@@ -116,21 +111,21 @@ describe BookmarksController do
   end
   
   describe "DELETE 'destroy'" do
-
-    describe "for an unauthorized user" do
-
-      before(:each) do
-        @user = Factory(:user)
-        wrong_user = Factory(:user, :email => Factory.next(:email))
-        test_sign_in(wrong_user)
-        @bookmark = Factory(:bookmark, :user => @user)
-      end
-
-      it "should deny access" do
-        delete :destroy, :id => @bookmark
-        response.should redirect_to(root_path)
-      end
-    end
+#
+#    describe "for an unauthorized user" do
+#
+#      before(:each) do
+#        @user = Factory(:user)
+#        wrong_user = Factory(:user, :email => Factory.next(:email))
+#        test_sign_in(wrong_user)
+#        @bookmark = Factory(:bookmark, :user => @user)
+#      end
+#
+#      it "should deny access" do
+#        delete :destroy, :id => @bookmark
+#        response.should redirect_to(root_path)
+#      end
+#    end
 
     describe "for an authorized user" do
 

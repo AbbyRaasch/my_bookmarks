@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy]  
+  before_filter :authenticate, :only => [:create, :destroy, :show]  
   before_filter :authorized_user, :only => :destroy
   # GET /bookmarks
   # GET /bookmarks.xml
@@ -7,7 +7,7 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html  #index.html.erb
       format.xml  { render :xml => @bookmarks }
     end
   end
@@ -97,5 +97,10 @@ class BookmarksController < ApplicationController
       @bookmark = current_user.bookmarks.find_by_id(params[:id])
       redirect_to root_path if @bookmark.nil?
     end
+	private
+  
+  	def authenticate
+      deny_access unless signed_in?
+   end
 
 end

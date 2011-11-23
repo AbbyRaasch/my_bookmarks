@@ -1,3 +1,10 @@
+<% unless @user.bookmarks.empty? %>
+        <table class="bookmarks" summary="User bookmarks">
+          <%= render @bookmarks %>
+        </table>
+        <%= will_paginate @bookmarks %>
+  <% end %>
+
 <h1>See 11.28 for the details</h1>
 
 <%= form_for @bookmark do |f| %>

@@ -3,12 +3,12 @@
 <br />
 <br />
   
-  <a href="<%= user_path(current_user) %>">
+
     <span class="user_name">
       <%= current_user.name %>
     </span>
     <span class="bookmarks">
-      <%= pluralize(current_user.bookmarks.count, "bookmarks") %>
+      <%= current_user.bookmarks.all(:select => :URL), "bookmarks") %>
     </span>
-  </a>
+    
 </div>

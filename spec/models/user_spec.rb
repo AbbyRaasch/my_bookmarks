@@ -161,20 +161,20 @@ describe User do
       @bm2 = Factory(:bookmark, :user => @user, :created_at => 1.hour.ago)
     end
 
-    it "should have a bookmarks attribute" do
-      @user.should respond_to(:bookmarks)
-    end
-    
-    it "should have the right bookmarks in the right order" do
-		@user.bookmarks.should == [@bm2, @bm1]    
-    end
-    
-    it "should destroy associated bookmarks" do
-      @user.destroy
-      [@bm1, @bm2].each do |bookmark|
-        Bookmark.find_by_id(bookmark.id).should be_nil
-      end
-    end
+	    it "should have a bookmarks attribute" do
+	      @user.should respond_to(:bookmarks)
+	    end
+	    
+	    it "should have the right bookmarks in the right order" do
+			@user.bookmarks.should == [@bm2, @bm1]    
+	    end
+	    
+	    it "should destroy associated bookmarks" do
+	      @user.destroy
+	      [@bm1, @bm2].each do |bookmark|
+	        Bookmark.find_by_id(bookmark.id).should be_nil
+	    end
+  end
     
     describe "status feed" do
 

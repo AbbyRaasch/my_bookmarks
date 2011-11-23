@@ -2,18 +2,12 @@
 <br />
 <br />
 <br />
-  <% unless @user.bookmarks.empty? %>
-        <table class="bookmarks" summary="User bookmarks">
-          <%= render @bookmarks %>
-        </table>
-        <%= will_paginate @bookmarks %>
-  <% end %>
-  <a href="<%= user_path(current_user) %>">
+  
+
     <span class="user_name">
       <%= current_user.name %>
     </span>
     <span class="bookmarks">
-      <%= pluralize(current_user.bookmarks.count, "bookmarks") %>
+      <%= current_user.bookmarks.all(:select => :URL) %>
     </span>
-  </a>
 </div>
