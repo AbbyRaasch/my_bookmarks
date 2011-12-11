@@ -1,4 +1,5 @@
 <h1>
+  
   <%= @user.name %>, <%= @user.real_name %>, <%= @user.email %>, Bookmarks <%= @user.bookmarks.count %>
   <% unless @user.bookmarks.empty? %>
         <table class="bookmarks" summary="User bookmarks">
@@ -6,6 +7,8 @@
         </table>
         <%= will_paginate @bookmarks %>
   <% end %>
+
+
 </h1>
 	<table>
 		<tr>
