@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :real_name, :email, :password, :password_confirmation
   
-  has_many :bookmarks, :dependent => :destroy
+  has_many :users_bookmarks
+  has_many :bookmarks, :through => :users_bookmarks
   
   # Automatically create the virtual attribute 'password_confirmation'.
   validates :password, :presence     => true,
